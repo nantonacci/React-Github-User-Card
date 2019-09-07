@@ -22,7 +22,7 @@ class App extends React.Component {
       .then(res => this.setState({ user: res }))
       .catch(err => console.log(err));
 
-  // fet follower data
+  // fetch follower data
     fetch("https://api.github.com/users/nantonacci/followers")
       .then(res => res.json())
       .then(res => this.setState({ followers: res }))

@@ -1,26 +1,23 @@
 import React from 'react';
-
+import { Card, Icon } from 'semantic-ui-react';
 
 function UserCard(props) {
-
-    function hire(){
-        if(props.user.hireable === true){
-                return "Hireable";
-            } return "Not hireable";
-        }
-        const hir = hire();
-        
+    const extra = (
+        <a>
+          <Icon name='user' />
+          {props.user.followers} followers
+        </a>
+      )
+            
     return(
-        <div>
-            <h1>{props.user.name}</h1>
-            <img src={props.user.avatar_url} alt={props.user.name} />
-            <p><a href={props.user.blog}>Twitter</a></p>
-            <p>{props.user.location}</p>
-            <p><a href={props.user.email}>Contact</a></p>
-            <p>{hir}
-            </p>
-           
-        </div>
+        <Card
+        image={props.user.avatar_url}
+        header={props.user.name}
+        meta={props.user.location}
+        description={<a href={props.user.url}>Check out my profile</a>}
+        extra={extra}
+        />
+        
     )
 }
 
