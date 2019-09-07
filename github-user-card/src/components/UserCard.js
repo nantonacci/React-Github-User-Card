@@ -19,8 +19,7 @@ function UserCard(props) {
             <p><a href={props.user.email}>Contact</a></p>
             <p>{hir}
             </p>
-            {/* <p>{props.user}</p>
-            <p>{props.user}</p> */}
+           
         </div>
     )
 }
