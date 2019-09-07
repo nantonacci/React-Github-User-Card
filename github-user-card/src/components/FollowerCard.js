@@ -5,9 +5,10 @@ function FollowerCard(props) {
     
         
     return(
-        <div>
+        <div className="followerContainer">
         {props.follower.map(follower => (
              <Card
+             className="followerCard"
                 key={follower.id}
                 image={follower.avatar_url}
                 alt={follower.login}

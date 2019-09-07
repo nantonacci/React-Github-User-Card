@@ -20,7 +20,7 @@ function UserCard(props) {
       )
             
     return(
-        <Card
+        <Card className="userCard"
         image={props.user.avatar_url}
         alt={props.user.name}
         header={props.user.name}
