@@ -1,32 +1,36 @@
 import React from 'react';
-
 import './App.css';
+import UserCard from './components/UserCard';
+
 
 class App extends React.Component {
-  constructor() {
-    console.log("constructor");
+  constructor(){
+  console.log("constructor");
     super();
     this.state = {
-      user: []
+      user: {}
     };
   }
-
+    
   componentDidMount() {
-    console.log("CDM");
-    fetch('https://api.github.com/users/nantonacci')
-    .then(res => res.json())
-    .then(user => {console.log(user);
-      this.setState({deets: user})
-    })
-    .catch(err => console.log(err))
+  console.log("CDM");
+    fetch("https://api.github.com/users/nantonacci")
+      .then(res => res.json())
+      .then(res => this.setState({ user: res }))
+      .catch(err => console.log(err));
+
   }
 
+  
   render() {
     console.log("render");
-    return(
+    return (
       <div>
+        <UserCard user={this.state.user}/>
+     
+        
       </div>
-    )
+    );
   }
 }
 
