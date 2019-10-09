@@ -1,3 +1,8 @@
 {
-  "routes": [{ "src": "/github-user-card/src", "dest": "/public/index.html" }]
+  "routes": [
+    {
+      "src": "/github-user-card/src/index.js",
+      "dest": "/github-user-card/public/index.html"
+    }
+  ]
 }
